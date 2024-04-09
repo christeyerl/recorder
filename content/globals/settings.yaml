@@ -1,0 +1,26 @@
+title: Settings
+data:
+  site_title: AztorSound
+  separator: '|'
+  phone: '+421 907 118 206'
+  email: aztorsound@gmail.com
+  address:
+    street: null
+    post_code: null
+    city: null
+    country: null
+  theme_light_color: '#000000'
+  theme_dark_color: '#000000'
+  favicon_svg: favicon.svg
+  favicon_png: favicon.png
+  analytics_fathom: false
+  analytics_google: false
+  og_image: open-graph.png
+  schema_organization:
+    name: null
+  schema_place:
+    name: null
+  schema_person:
+    name: null
+  sitemap_collections:
+    - pages

@@ -1,0 +1,29 @@
+<header>
+    <div class="bg-black text-white selection:bg-white selection:text-black">
+        <div class="mx-auto max-w-screen-xl px-4 py-4 sm:px-8 sm:py-6">
+            <div class="flex items-center justify-between gap-5">
+                <a
+                    href="/"
+                    class="sm:p-2"
+                    aria-label="Back to home"
+                >
+                    <span class="sm:text-xl uppercase select-none">AztorSound</span>
+                </a>
+                <nav class="flex items-center gap-2">
+                    <a
+                        href="/"
+                        class="{{ ['p-1 uppercase opacity-50 transition-opacity hover:opacity-100 sm:p-2', '!opacity-100' => current_uri == '/'] | classes }}"
+                    >
+                        Home
+                    </a>
+                    <a
+                        href="/portfolio"
+                        class="{{ ['p-1 uppercase opacity-50 transition-opacity hover:opacity-100 sm:p-2', '!opacity-100' => current_uri == '/portfolio'] | classes }}"
+                    >
+                        Portfolio
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>

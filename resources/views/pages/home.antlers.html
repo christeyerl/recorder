@@ -1,0 +1,94 @@
+<main>
+    <section id="hero">
+        <div class="relative h-96 before:absolute before:inset-0 before:z-10 before:size-full before:bg-black/20 md:h-[80dvh]">
+            <img
+                src="{{ asset url="/assets/images/photo-1.webp" }}"
+                alt="My studio"
+                class="absolute inset-0 -z-10 size-full object-cover"
+            />
+            <div class="absolute z-20 top-12 inset-x-0 p-8 md:top-32">
+                <div class="text-center text-white select-none">
+                    <h1 class="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-8xl">AztorSound</h1>
+                    <p class="mt-5 text-2xl font-medium sm:text-4xl">music & sound design</p>
+                    <div class="mt-10">
+                        {{ partial:button href="/#contacts" class="md:!px-20 md:!py-6" }}
+                            <span>Contact me</span>
+                        {{ /partial:button }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="mx-auto max-w-screen-xl px-8 py-20 lg:pt-32 lg:pb-40">
+            <div class="text-center">
+                <h2 class="text-3xl font-light lowercase text-gray-500 sm:text-5xl">About me</h2>
+                <p class="mt-10 text-xl text-gray-950 sm:text-3xl">I'm just a guy who makes sound...</p>
+            </div>
+            <div class="mt-5 mx-auto max-w-2xl">
+                <img
+                    src="{{ asset url="/assets/images/photo-2.webp" }}"
+                    alt="Jurko"
+                    class="size-full object-cover"
+                />
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="bg-black text-white selection:bg-white selection:text-black">
+            <div class="mx-auto max-w-screen-lg px-8 py-20 lg:py-40">
+                <div class="space-y-20">
+                    {{ taxonomy from="categories" }}
+                        <div>
+                            <div class="text-center">
+                                <h2 class="text-3xl font-light lowercase sm:text-5xl">
+                                    {{ title }}
+                                </h2>
+                            </div>
+                            <div class="mt-5 sm:mt-10">
+                                {{ entries featured:is="true" }}
+                                    {{ partial:cards/featured }}
+                                {{ /entries }}
+                            </div>
+                        </div>
+                    {{ /taxonomy }}
+
+                    <div class="!mt-10 text-center">
+                        {{ partial:button href="/portfolio" }}
+                            <span>Show more</span>
+                        {{ /partial:button }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts">
+        <div class="mx-auto max-w-screen-xl px-8 py-20 lg:py-32">
+            <div class="grid divide-y-4 divide-black md:grid-cols-2 md:divide-y-0 md:divide-x-4">
+                <div class="flex flex-col gap-5 py-5">
+                    <a
+                        href="tel:+421907118206"
+                        class="mx-auto flex items-center gap-3 text-lg transition-all hover:scale-105 hover:opacity-75 sm:text-2xl"
+                    >
+                        {{ partial:icons/phone class="size-8 text-black" }}
+                        +421 907 118 206
+                    </a>
+                    <a
+                        href="mailto:aztorsound@gmail.com"
+                        class="mx-auto flex items-center gap-3 text-lg transition-all hover:scale-105 hover:opacity-75 sm:text-2xl"
+                    >
+                        {{ partial:icons/envelope class="size-8 text-black" }}
+                        aztorsound@gmail.com
+                    </a>
+                </div>
+                <div class="flex flex-col gap-1 py-5 text-center text-xl sm:text-3xl">
+                    <p>monday - friday</p>
+                    <p>8:00 - 18:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

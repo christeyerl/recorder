@@ -1,0 +1,14 @@
+name: Admin
+super: true
+id: 9cb64ab5-f771-4689-b1bf-627044a8d17d
+password_hash: $2y$10$Gj491NlLQ.gE6gRqc96b5.7umZz.y0CF.R.fad1fzLTIc8t5WCWcO
+preferences:
+  collections:
+    projects:
+      columns:
+        - title
+        - slug
+        - date
+        - status
+        - featured
+        - categories

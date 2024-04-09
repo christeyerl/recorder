@@ -1,0 +1,117 @@
+title: Project
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: content
+            field:
+              type: markdown
+              display: Content
+              localizable: true
+          -
+            handle: featured_image
+            field:
+              max_files: 1
+              mode: grid
+              container: assets
+              restrict: true
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'Featured image'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              folder: covers
+              width: 50
+          -
+            handle: music
+            field:
+              max_files: 1
+              mode: grid
+              container: assets
+              restrict: true
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: Music
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - 'mimes:mp3,wav'
+              folder: music
+              width: 50
+          -
+            handle: video
+            field:
+              type: video
+              display: Video
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              width: 50
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: featured
+            field:
+              default: false
+              type: toggle
+              display: Featured
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now
+              validate:
+                - required
+          -
+            handle: categories
+            field:
+              type: terms
+              taxonomies:
+                - categories
+              display: Categories
+              mode: select
+          -
+            handle: tags
+            field:
+              type: terms
+              taxonomies:
+                - tags
+              display: Tags
+              mode: select

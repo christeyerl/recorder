@@ -1,0 +1,39 @@
+<div class="grid items-center gap-10 sm:grid-cols-2">
+    <div>
+        {{ if video }}
+            <iframe
+                src="{{ video | embed_url }}"
+                class="aspect-video w-full"
+            ></iframe>
+        {{ else }}
+            <div class="lg:px-20">
+                <img
+                    src="{{ featured_image:url }}"
+                    alt="{{ featured_image:alt }}"
+                    class=""
+                />
+                {{ if music }}
+                    <audio controls class="w-full">
+                        <source src="{{ music:url }}" />
+                    </audio>
+                {{ /if }}
+            </div>
+        {{ /if }}
+    </div>
+    <div>
+        <h3 class="text-xl font-medium uppercase sm:text-2xl">
+            {{ title }}
+        </h3>
+        <p class="mt-2 sm:text-xl">
+            {{ content | strip_tags }}
+        </p>
+        <dl class="mt-1 lowercase sm:text-xl">
+            <dt>My work:</dt>
+            <dd>
+                {{ tags }}
+                    {{ title }}{{ unless last }}, {{ /unless }}
+                {{ /tags }}
+            </dd>
+        </dl>
+    </div>
+</div>

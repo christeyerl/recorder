@@ -1,0 +1,549 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: site_title
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Site Title'
+              instructions: "The title for the website. Defaults to Laravel's App Name."
+              width: 75
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: separator
+            field:
+              options:
+                '|': null
+                /: null
+                '>': null
+                '-': null
+              taggable: false
+              push_tags: false
+              multiple: false
+              clearable: false
+              searchable: true
+              cast_booleans: false
+              type: select
+              display: Separator
+              width: 25
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              default: '|'
+      -
+        display: 'Social Media'
+        fields:
+          -
+            handle: social_links
+            field:
+              fields:
+                -
+                  handle: icon
+                  field:
+                    type: icon
+                    display: Icon
+                    icon: icon_picker
+                    width: 25
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                    directory: resources/svg/icon/social
+                -
+                  handle: network
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Network
+                    icon: text
+                    width: 25
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                    placeholder: Facebook
+                -
+                  handle: url
+                  field:
+                    input_type: url
+                    antlers: false
+                    type: text
+                    display: URL
+                    icon: text
+                    width: 50
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                    validate:
+                      - url
+                    placeholder: 'https://'
+              mode: table
+              reorderable: true
+              fullscreen: true
+              type: grid
+              display: Links
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              add_row: 'Add link'
+      -
+        fields:
+          -
+            handle: phone
+            field:
+              input_type: tel
+              antlers: false
+              type: text
+              display: Phone
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              placeholder: '+421 901 234 567'
+          -
+            handle: email
+            field:
+              input_type: email
+              antlers: false
+              type: text
+              display: Email
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              placeholder: info@example.com
+          -
+            handle: address
+            field:
+              fields:
+                -
+                  handle: street
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Street
+                    icon: text
+                    width: 75
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: post_code
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: 'Post Code'
+                    icon: text
+                    width: 25
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: city
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: City
+                    icon: text
+                    width: 50
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                -
+                  handle: country
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Country
+                    icon: text
+                    width: 50
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+              fullscreen: true
+              type: group
+              display: Address
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              localizable: true
+  appearance:
+    display: Appearance
+    sections:
+      -
+        fields:
+          -
+            handle: theme_light_color
+            field:
+              allow_any: true
+              type: color
+              display: 'Theme Light Color'
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: theme_dark_color
+            field:
+              allow_any: true
+              type: color
+              display: 'Theme Dark Color'
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+      -
+        display: Favicons
+        fields:
+          -
+            handle: favicon_svg
+            field:
+              max_files: 1
+              mode: list
+              container: assets
+              restrict: true
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'Favicon (SVG)'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              instructions: 'The full color SVG favicon for [modern browsers](https://caniuse.com/link-icon-svg).'
+              width: 50
+          -
+            handle: favicon_png
+            field:
+              max_files: 1
+              mode: list
+              container: assets
+              restrict: true
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'Favicon (PNG)'
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+  analytics:
+    display: Analytics
+    sections:
+      -
+        display: Trackers
+        fields:
+          -
+            handle: analytics_fathom
+            field:
+              default: false
+              type: toggle
+              display: Fathom
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: spacer_1
+            field:
+              type: spacer
+              display: Spacer
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              unless:
+                analytics_fathom: 'equals true'
+          -
+            handle: analytics_fathom_site_id
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Site ID'
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - 'required_if:analytics_fathom,true'
+              if:
+                analytics_fathom: 'equals true'
+          -
+            handle: analytics_google
+            field:
+              default: false
+              type: toggle
+              display: 'Google Analytics'
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: spacer_2
+            field:
+              type: spacer
+              display: Spacer
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              unless:
+                analytics_google: 'equals true'
+          -
+            handle: analytics_google_tracking_id
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: 'Tracking ID'
+              width: 50
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - 'required_if:analytics_google,true'
+              if:
+                analytics_google: 'equals true'
+  seo:
+    display: SEO
+    sections:
+      -
+        display: 'Open Graph'
+        fields:
+          -
+            handle: og_image
+            field:
+              max_files: 1
+              mode: list
+              container: assets
+              restrict: false
+              allow_uploads: true
+              show_filename: true
+              show_set_alt: true
+              type: assets
+              display: 'Default OG Image'
+              listable: hidden
+              instructions_position: below
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              instructions: 'The recommended size is 1200 x 630 px.'
+      -
+        display: Schema
+        fields:
+          -
+            handle: schema_type
+            field:
+              options:
+                none: null
+                organization: null
+                place: null
+                person: null
+                custom: null
+              type: button_group
+              display: Type
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: schema_organization
+            field:
+              fields:
+                -
+                  handle: name
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Company
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+                    validate:
+                      - 'required_if:schema_type,organization'
+              fullscreen: true
+              type: group
+              display: Organization
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                schema_type: 'equals organization'
+              localizable: true
+          -
+            handle: schema_place
+            field:
+              fields:
+                -
+                  handle: name
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Name
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+              fullscreen: true
+              type: group
+              display: Place
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - 'required_if:schema_type,place'
+              if:
+                schema_type: 'equals place'
+              localizable: true
+          -
+            handle: schema_person
+            field:
+              fields:
+                -
+                  handle: name
+                  field:
+                    input_type: text
+                    antlers: false
+                    type: text
+                    display: Name
+                    icon: text
+                    listable: hidden
+                    instructions_position: above
+                    visibility: visible
+                    replicator_preview: true
+                    hide_display: false
+              fullscreen: true
+              type: group
+              display: Person
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                schema_type: 'equals person'
+              validate:
+                - 'required_if:schema_type,person'
+              localizable: true
+          -
+            handle: schema_custom
+            field:
+              theme: material
+              mode: htmlmixed
+              mode_selectable: true
+              indent_type: spaces
+              indent_size: 4
+              key_map: default
+              line_numbers: true
+              line_wrapping: true
+              antlers: false
+              type: code
+              display: 'Custom Schema'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              if:
+                schema_type: 'equals custom'
+              instructions: 'Custom [Schema.org](https://schema.org) data in JSON-LD encoding.'
+              localizable: true
+  sitemap:
+    display: Sitemap
+    sections:
+      -
+        fields:
+          -
+            handle: sitemap_collections
+            field:
+              mode: default
+              type: collections
+              display: Collections
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              instructions: 'Select which collections to include in the sitemap.xml.'
+          -
+            handle: sitemap_taxonomies
+            field:
+              mode: default
+              type: taxonomies
+              display: Taxonomies
+              instructions: 'Select which taxonomies to include in the sitemap.xml.'
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
